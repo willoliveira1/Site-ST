@@ -86,6 +86,18 @@ function difalDiretoImportado(parametros, somaImportado){
 	return calc;
 }
 
+//Função que cálcula o Difal de produtos Nacionais para Contribuinte Por Dentro
+function porDentroNacional(parametros, somaNacional, icms){
+	var calc = ((somaNacional - (somaNacional * icms)) / (1 - parametros.aliquotaInterna)) - somaNacional;
+	return calc;
+}
+
+//Função que cálcula o Difal de produtos Importados para Contribuinte Por Dentro
+function porDentroImportado(parametros, somaImportado, icms){
+	var calc = ((somaImportado - (somaImportado * icms)) / (1 - parametros.aliquotaInterna)) - somaImportado;
+	return calc;
+}
+
 //Arrays por estado de Aliquotas ICMS e Tipo.
 var doze = [11, 18, 19, 23, 24];
 var sete = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 20, 21, 22, 25, 26];
